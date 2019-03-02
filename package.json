@@ -1,0 +1,33 @@
+{
+  "name": "ansi-color-parse",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "babel ./src --out-dir ./dist",
+    "patch": "npm run build && npx auto-vers -i",
+    "minor": "npm run build && npx auto-vers -i minor",
+    "major": "npm run build && npx auto-vers -i major",
+    "tip": "npm run build && npx auto-vers -t",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha && ./node_modules/.bin/codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hua1995116/ansi-color-parse.git"
+  },
+  "keywords": [],
+  "author": "hua199116<qiufenghyf@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hua1995116/ansi-color-parse/issues"
+  },
+  "homepage": "https://github.com/hua1995116/ansi-color-parse#readme",
+  "devDependencies": {
+    "auto-vers": "^1.0.3",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.2.0",
+    "codecov": "^3.1.0",
+    "mocha": "^5.2.0"
+  }
+}

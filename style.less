@@ -1,0 +1,110 @@
+.precode {
+    counter-reset: line-numbering;
+    white-space: pre-wrap;
+    clear: left;
+    min-height: 42px;
+    padding: 15px 0;
+    color: #f1f1f1;
+    font-family: Cousine,monospace;
+    font-size: 12px;
+    line-height: 19px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: #222;
+    margin-top: 0;
+    margin-bottom: -45px;
+    .log-line {
+        position: relative;
+        padding: 0 15px 0 62px;
+        margin: 0;
+    
+    }
+    .log-line:hover {
+        background-color: #444!important;
+    }
+    .log-line::before {
+        content: counter(line-numbering);
+        counter-increment: line-numbering;
+        display: inline-block;
+        text-align: right;
+        min-width: 40px;
+        margin-left: -50px;
+        cursor: pointer;
+        text-decoration: none;
+        position: absolute;
+        color: #666;
+        padding-right: 1em;
+    }
+}
+
+@black: #4E4E4E;
+@red: red;
+@green: green;
+@yellow: yellow;
+@blue: blue;
+@magenta: magenta;
+@cyan: cyan;
+@white: white;
+@grey: grey;
+@bg-black: #4E4E4E;
+@bg-red: red;
+@bg-green: green;
+@bg-yellow: yellow;
+@bg-blue: blue;
+@bg-magenta: magenta;
+@bg-cyan: cyan;
+@bg-white: white;
+
+.precode {
+    .black {
+        color: @black
+    }
+    .red {
+        color: @red
+    }
+    .green {
+        color: @green
+    }
+    .yellow {
+        color: @yellow
+    }
+    .blue {
+        color: @blue
+    }
+    .magenta {
+        color: @magenta
+    }
+    .cyan {
+        color: @cyan
+    }
+    .white {
+        color: @white
+    }
+    .grey {
+        color: @grey
+    }
+    .bg-black {
+        background-color: @bg-black
+    }
+    .bg-red {
+        background-color: @bg-red
+    }
+    .bg-green {
+        background-color: @bg-green
+    }
+    .bg-yellow {
+        background-color: @bg-yellow
+    }
+    .bg-blue {
+        background-color: @bg-blue
+    }
+    .bg-magenta {
+        background-color: @bg-magenta
+    }
+    .bg-cyan {
+        background-color: @bg-cyan
+    }
+    .bg-white {
+        background-color: @bg-white
+    }
+}

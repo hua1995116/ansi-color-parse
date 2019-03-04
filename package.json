@@ -4,7 +4,7 @@
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "babel ./src --out-dir ./dist",
+    "build": "babel ./src/ ./src --out-dir ./dist && lessc style.less ./dist/style.css",
     "patch": "npm run build && npx auto-vers -i",
     "minor": "npm run build && npx auto-vers -i minor",
     "major": "npm run build && npx auto-vers -i major",
@@ -28,6 +28,7 @@
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "codecov": "^3.1.0",
+    "less": "^3.9.0",
     "mocha": "^5.2.0"
   }
 }

@@ -1,5 +1,6 @@
 console() {
     echo "$@" | sed \
+        -e "s/\[\[\(.*\)/\1/" \
         -e "s/\(.*\)/\1@reset/" \
         -e "s/@black/$(tput setaf 0)/g" \
         -e "s/@red/$(tput setaf 1)/g" \
@@ -21,3 +22,5 @@ console() {
         -e "s/@b/$(tput bold)/g" \
         -e "s/@u/$(tput sgr 0 1)/g"
 }
+
+# 示例 console @red@bgblack[[fff

@@ -5,24 +5,27 @@ function ansi2html(ansiList, wrap = '') {
 
         const {background = '', text, foreground = ''} = htmlFrame;
         if(background && foreground) {
-            html += fontBgCode(text, foreground, background);
             if(text.includes('\n')) {
                 html += wrap;
+                continue;
             }
+            html += fontBgCode(text, foreground, background);
             continue;
         }
         if(background || foreground) {
-            const color = background ? `bg-${background}` : foreground;
-            html += bgCode(text, color);
             if(text.includes('\n')) {
                 html += wrap;
+                continue;
             }
+            const color = background ? `bg-${background}` : foreground;
+            html += bgCode(text, color);
+            continue;
+        }
+        if(text.includes('\n')) {
+            html += wrap;
             continue;
         }
         html += singleCode(text);
-        if(text.includes('\n')) {
-            html += wrap;
-        }
     }
     html += ''
     return html;

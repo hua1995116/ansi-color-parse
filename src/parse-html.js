@@ -12,17 +12,22 @@ function ansi2html(ansiList, wrap = '') {
             html += fontBgCode(text, foreground, background);
             continue;
         }
-        if(background || foreground) {
-            if(text.includes('\n')) {
-                html += wrap;
-                continue;
-            }
+        if (background || foreground) {
             const color = background ? `bg-${background}` : foreground;
-            html += bgCode(text, color);
+            let textColor = bgCode(text, color);
+
+            textColor = textColor.replace(/\n/g, wrap);
+            // if(text.includes('\n')) {
+            //     html += wrap;
+            //     continue;
+            // }
+            
+            html += textColor;
             continue;
         }
-        if(text.includes('\n')) {
-            html += wrap;
+        if (text.includes('\n')) {
+            const textColor = text.replace(/\n/g, wrap);
+            html += textColor;
             continue;
         }
         html += singleCode(text);
